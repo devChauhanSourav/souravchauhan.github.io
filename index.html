@@ -24,17 +24,7 @@
     /* ===============================
        Light Mode Overrides
        =============================== */
-    @media (prefers-color-scheme: light) {
-      :root {
-        --bg: #ffffff;
-        --bg-gradient: linear-gradient(180deg, #ffffff, #f8fafc);
-        --panel: #f8fafc;
-        --border: #e5e7eb;
-        --text: #0f172a;
-        --muted: #475569;
-        --accent: #0284c7;
-      }
-    }
+ 
 
     /* ===============================
        Base Styles
@@ -233,28 +223,53 @@
     </footer>
   </main>
 
-  <script>
+<script>
   (function () {
+    const darkVars = {
+      '--bg': '#0b1020',
+      '--bg-gradient': 'radial-gradient(1200px 600px at 20% -10%, #0f1730, #0b1020)',
+      '--panel': '#12172a',
+      '--border': '#1f2540',
+      '--text': '#e5e7eb',
+      '--muted': '#9ca3af',
+      '--accent': '#38bdf8'
+    };
+
+    const lightVars = {
+      '--bg': '#ffffff',
+      '--bg-gradient': 'linear-gradient(180deg, #ffffff, #f8fafc)',
+      '--panel': '#f8fafc',
+      '--border': '#e5e7eb',
+      '--text': '#0f172a',
+      '--muted': '#475569',
+      '--accent': '#0284c7'
+    };
+
+    const root = document.documentElement;
     const media = window.matchMedia('(prefers-color-scheme: dark)');
 
-    function applyTheme(e) {
-      // Force repaint by toggling a data attribute
-      document.documentElement.dataset.theme =
-        e.matches ? 'dark' : 'light';
+    function apply(vars) {
+      Object.keys(vars).forEach(key => {
+        root.style.setProperty(key, vars[key]);
+      });
     }
 
-    // Apply on first load
-    applyTheme(media);
+    function syncTheme() {
+      apply(media.matches ? darkVars : lightVars);
+    }
 
-    // Listen for system theme changes (mobile fix)
+    // Initial apply
+    syncTheme();
+
+    // React to system changes (mobile-safe)
     if (media.addEventListener) {
-      media.addEventListener('change', applyTheme);
+      media.addEventListener('change', syncTheme);
     } else if (media.addListener) {
-      // older Safari
-      media.addListener(applyTheme);
+      media.addListener(syncTheme);
     }
   })();
 </script>
+
 
 </body>
 </html>
