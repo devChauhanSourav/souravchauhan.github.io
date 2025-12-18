@@ -3,722 +3,184 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Sourav Chauhan – Full Stack Developer</title>
-  <meta name="description" content="Senior Full Stack Developer specializing in Laravel, Vue.js, and scalable web applications. 8+ years building production systems for startups and businesses." />
-  
+  <title>Sourav Chauhan – Senior Full Stack Developer</title>
+  <meta name="description" content="Sourav Chauhan is a Senior Full Stack Developer with 8+ years of experience building scalable, production-ready web applications using Laravel, Vue.js, and Nuxt.js." />
+
+  <meta property="og:title" content="Sourav Chauhan – Senior Full Stack Developer" />
+  <meta property="og:description" content="8+ years experience | Laravel | Vue.js | Nuxt.js | Real-world production systems" />
+  <meta property="og:type" content="website" />
+
   <style>
-    /* ========== Reset & Base ========== */
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-    
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
     body {
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
       background: #0a0e27;
       color: #e2e8f0;
-      line-height: 1.6;
-      -webkit-font-smoothing: antialiased;
-    }
-
-    /* ========== Hero Section ========== */
-    .hero {
-      min-height: 100vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      background: linear-gradient(135deg, #0a0e27 0%, #1a1f3a 100%);
-      padding: 40px 20px;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .hero::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      background: 
-        radial-gradient(circle at 20% 50%, rgba(56, 189, 248, 0.1) 0%, transparent 50%),
-        radial-gradient(circle at 80% 80%, rgba(139, 92, 246, 0.1) 0%, transparent 50%);
-      pointer-events: none;
-    }
-
-    .hero-content {
-      max-width: 900px;
-      text-align: center;
-      position: relative;
-      z-index: 1;
-    }
-
-    .hero-label {
-      display: inline-block;
-      padding: 8px 16px;
-      background: rgba(56, 189, 248, 0.1);
-      border: 1px solid rgba(56, 189, 248, 0.3);
-      border-radius: 50px;
-      color: #38bdf8;
-      font-size: 0.875rem;
-      font-weight: 500;
-      margin-bottom: 24px;
-      letter-spacing: 0.5px;
-    }
-
-    .hero h1 {
-      font-size: clamp(2.5rem, 8vw, 4.5rem);
-      font-weight: 800;
-      background: linear-gradient(135deg, #ffffff 0%, #38bdf8 100%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-      margin-bottom: 24px;
-      line-height: 1.1;
-      letter-spacing: -0.02em;
-    }
-
-    .hero-subtitle {
-      font-size: clamp(1.125rem, 3vw, 1.5rem);
-      color: #94a3b8;
-      margin-bottom: 32px;
-      line-height: 1.5;
-    }
-
-    .hero-description {
-      font-size: 1.125rem;
-      color: #cbd5e1;
-      max-width: 700px;
-      margin: 0 auto 48px;
-      line-height: 1.8;
-    }
-
-    .cta-buttons {
-      display: flex;
-      gap: 16px;
-      justify-content: center;
-      flex-wrap: wrap;
-    }
-
-    .btn {
-      padding: 14px 32px;
-      border-radius: 8px;
-      font-weight: 600;
-      font-size: 1rem;
-      text-decoration: none;
-      transition: all 0.2s ease;
-      display: inline-block;
-    }
-
-    .btn-primary {
-      background: #38bdf8;
-      color: #0a0e27;
-    }
-
-    .btn-primary:hover {
-      background: #7dd3fc;
-      transform: translateY(-2px);
-    }
-
-    .btn-secondary {
-      background: rgba(255, 255, 255, 0.1);
-      color: #e2e8f0;
-      border: 1px solid rgba(255, 255, 255, 0.2);
-    }
-
-    .btn-secondary:hover {
-      background: rgba(255, 255, 255, 0.15);
-      transform: translateY(-2px);
-    }
-
-    /* ========== Section Container ========== */
-    section {
-      padding: 100px 24px;
-      max-width: 1200px;
-      margin: 0 auto;
-    }
-
-    @media (min-width: 768px) {
-      section {
-        padding: 120px 48px;
-      }
-    }
-
-    .section-header {
-      text-align: center;
-      margin-bottom: 64px;
-    }
-
-    .section-label {
-      display: inline-block;
-      color: #38bdf8;
-      font-size: 0.875rem;
-      font-weight: 600;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      margin-bottom: 12px;
-    }
-
-    .section-title {
-      font-size: clamp(2rem, 5vw, 3rem);
-      font-weight: 700;
-      color: #f8fafc;
-      margin-bottom: 16px;
-    }
-
-    .section-description {
-      font-size: 1.125rem;
-      color: #94a3b8;
-      max-width: 600px;
-      margin: 0 auto;
-    }
-
-    /* ========== Expertise Section ========== */
-    .expertise {
-      background: #0f1629;
-    }
-
-    .expertise-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 24px;
-    }
-
-    .expertise-card {
-      background: linear-gradient(135deg, #1a1f3a 0%, #0f1629 100%);
-      padding: 32px;
-      border-radius: 16px;
-      border: 1px solid rgba(56, 189, 248, 0.1);
-      transition: all 0.3s ease;
-    }
-
-    .expertise-card:hover {
-      border-color: rgba(56, 189, 248, 0.3);
-      transform: translateY(-4px);
-    }
-
-    .expertise-icon {
-      width: 48px;
-      height: 48px;
-      background: rgba(56, 189, 248, 0.1);
-      border-radius: 12px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin-bottom: 20px;
-      font-size: 24px;
-    }
-
-    .expertise-card h3 {
-      font-size: 1.25rem;
-      color: #f8fafc;
-      margin-bottom: 12px;
-      font-weight: 600;
-    }
-
-    .expertise-card p {
-      color: #94a3b8;
       line-height: 1.7;
-      font-size: 0.9375rem;
     }
 
-    /* ========== Projects Section ========== */
-    .projects {
-      background: #0a0e27;
+    .container {
+      max-width: 960px;
+      margin: auto;
+      padding: 80px 24px;
     }
 
-    .projects-grid {
-      display: grid;
-      gap: 32px;
-    }
-
-    .project-card {
-      background: linear-gradient(135deg, #1a1f3a 0%, #0f1629 100%);
-      border-radius: 20px;
-      overflow: hidden;
-      border: 1px solid rgba(56, 189, 248, 0.1);
-      transition: all 0.3s ease;
-    }
-
-    .project-card:hover {
-      border-color: rgba(56, 189, 248, 0.3);
-      transform: translateY(-4px);
-    }
-
-    .project-content {
-      padding: 40px;
-    }
-
-    .project-tag {
-      display: inline-block;
-      padding: 6px 12px;
-      background: rgba(56, 189, 248, 0.1);
-      border-radius: 6px;
-      color: #38bdf8;
-      font-size: 0.75rem;
-      font-weight: 600;
-      text-transform: uppercase;
-      letter-spacing: 0.5px;
-      margin-bottom: 16px;
-    }
-
-    .project-card h3 {
-      font-size: 1.75rem;
-      color: #f8fafc;
-      margin-bottom: 16px;
+    h1 {
+      font-size: clamp(2rem, 4vw, 2.8rem);
       font-weight: 700;
-    }
-
-    .project-card p {
-      color: #94a3b8;
-      line-height: 1.8;
-      margin-bottom: 24px;
-      font-size: 1.0625rem;
-    }
-
-    .project-features {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
-      list-style: none;
-    }
-
-    .project-features li {
-      padding: 8px 16px;
-      background: rgba(255, 255, 255, 0.05);
-      border-radius: 8px;
-      color: #cbd5e1;
-      font-size: 0.875rem;
-      border: 1px solid rgba(255, 255, 255, 0.1);
-    }
-
-    /* ========== Experience Section ========== */
-    .experience {
-      background: #0f1629;
-    }
-
-    .timeline {
-      max-width: 800px;
-      margin: 0 auto;
-      position: relative;
-    }
-
-    .timeline::before {
-      content: '';
-      position: absolute;
-      left: 0;
-      top: 0;
-      bottom: 0;
-      width: 2px;
-      background: linear-gradient(180deg, #38bdf8 0%, rgba(56, 189, 248, 0.1) 100%);
-    }
-
-    @media (max-width: 767px) {
-      .timeline::before {
-        left: 20px;
-      }
-    }
-
-    .timeline-item {
-      padding-left: 60px;
-      margin-bottom: 48px;
-      position: relative;
-    }
-
-    @media (max-width: 767px) {
-      .timeline-item {
-        padding-left: 60px;
-      }
-    }
-
-    .timeline-item::before {
-      content: '';
-      position: absolute;
-      left: -6px;
-      top: 8px;
-      width: 14px;
-      height: 14px;
-      background: #38bdf8;
-      border: 3px solid #0f1629;
-      border-radius: 50%;
-      box-shadow: 0 0 0 4px rgba(56, 189, 248, 0.2);
-    }
-
-    @media (max-width: 767px) {
-      .timeline-item::before {
-        left: 14px;
-      }
-    }
-
-    .timeline-date {
-      color: #38bdf8;
-      font-size: 0.875rem;
-      font-weight: 600;
       margin-bottom: 8px;
-      display: block;
-    }
-
-    .timeline-item h3 {
-      font-size: 1.375rem;
       color: #f8fafc;
-      margin-bottom: 4px;
-      font-weight: 600;
     }
 
-    .timeline-company {
-      color: #64748b;
-      font-size: 1rem;
-      margin-bottom: 12px;
-      display: block;
-    }
-
-    .timeline-item p {
+    .role {
       color: #94a3b8;
-      line-height: 1.8;
+      font-size: 1.125rem;
+      margin-bottom: 24px;
     }
 
-    /* ========== Contact Section ========== */
-    .contact {
-      background: #0a0e27;
-      text-align: center;
+    p {
+      max-width: 760px;
+      margin-bottom: 24px;
+      color: #cbd5e1;
     }
 
-    .contact-content {
-      max-width: 600px;
-      margin: 0 auto;
+    h2 {
+      margin-top: 64px;
+      margin-bottom: 16px;
+      font-size: 1.5rem;
+      color: #f1f5f9;
+      border-bottom: 2px solid #1e293b;
+      padding-bottom: 8px;
     }
 
-    .contact-methods {
+    ul {
+      padding-left: 18px;
+      margin-top: 12px;
+    }
+
+    li {
+      margin-bottom: 10px;
+      color: #cbd5e1;
+    }
+
+    .projects {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
       gap: 24px;
-      margin-top: 48px;
+      margin-top: 24px;
     }
 
-    .contact-card {
-      background: rgba(56, 189, 248, 0.05);
-      padding: 32px 24px;
-      border-radius: 16px;
-      border: 1px solid rgba(56, 189, 248, 0.1);
-      transition: all 0.3s ease;
+    .project {
+      background: #0f1629;
+      border: 1px solid #1e293b;
+      border-radius: 10px;
+      padding: 24px;
     }
 
-    .contact-card:hover {
-      border-color: rgba(56, 189, 248, 0.3);
-      transform: translateY(-4px);
+    .project h3 {
+      margin-bottom: 8px;
+      color: #38bdf8;
+      font-size: 1.25rem;
     }
 
-    .contact-card-icon {
-      font-size: 32px;
+    .meta {
+      color: #64748b;
+      font-size: 0.875rem;
       margin-bottom: 12px;
     }
 
-    .contact-card h3 {
-      font-size: 0.875rem;
-      color: #64748b;
-      text-transform: uppercase;
-      letter-spacing: 0.5px;
-      margin-bottom: 8px;
-      font-weight: 600;
-    }
-
-    .contact-card a {
+    a {
       color: #38bdf8;
       text-decoration: none;
-      font-weight: 500;
-      transition: color 0.2s ease;
-      word-break: break-word;
     }
 
-    .contact-card a:hover {
-      color: #7dd3fc;
+    a:hover {
+      text-decoration: underline;
     }
 
-    /* ========== Footer ========== */
+    .contact {
+      margin-top: 32px;
+    }
+
     .footer {
-      background: #0f1629;
-      padding: 40px 24px;
-      text-align: center;
-      border-top: 1px solid rgba(56, 189, 248, 0.1);
-    }
-
-    .footer p {
+      margin-top: 80px;
+      padding-top: 24px;
+      border-top: 1px solid #1e293b;
       color: #64748b;
-      font-size: 0.9375rem;
-    }
-
-    /* ========== Scroll Indicator ========== */
-    .scroll-indicator {
-      position: absolute;
-      bottom: 40px;
-      left: 50%;
-      transform: translateX(-50%);
-      color: #64748b;
-      font-size: 0.875rem;
-      text-align: center;
-    }
-
-    .scroll-arrow {
-      display: block;
-      margin-top: 8px;
-      font-size: 24px;
-      animation: bounce 2s infinite;
-    }
-
-    @keyframes bounce {
-      0%, 20%, 50%, 80%, 100% {
-        transform: translateY(0);
-      }
-      40% {
-        transform: translateY(-10px);
-      }
-      60% {
-        transform: translateY(-5px);
-      }
-    }
-
-    /* ========== Accessibility ========== */
-    a:focus-visible, .btn:focus-visible {
-      outline: 2px solid #38bdf8;
-      outline-offset: 4px;
-    }
-
-    @media (prefers-reduced-motion: reduce) {
-      *, *::before, *::after {
-        animation-duration: 0.01ms !important;
-        animation-iteration-count: 1 !important;
-        transition-duration: 0.01ms !important;
-      }
+      font-size: 0.9rem;
     }
   </style>
 </head>
 <body>
-  
-  <!-- Hero Section -->
-  <div class="hero">
-    <div class="hero-content">
-      <div class="hero-label">👋 Available for Projects</div>
-      <h1>Sourav Chauhan</h1>
-      <p class="hero-subtitle">Senior Full Stack Developer & Technical Team Lead</p>
-      <p class="hero-description">
-        Building scalable, production-ready web applications for 8+ years. 
-        Specialized in Laravel, Vue.js, and modern AI-powered solutions that drive business growth.
-      </p>
-      <div class="cta-buttons">
-        <a href="#contact" class="btn btn-primary">Get In Touch</a>
-        <a href="#projects" class="btn btn-secondary">View Projects</a>
-      </div>
-    </div>
-    <div class="scroll-indicator">
-      <span>Scroll to explore</span>
-      <span class="scroll-arrow">↓</span>
-    </div>
-  </div>
 
-  <!-- Expertise Section -->
-  <section class="expertise" id="expertise">
-    <div class="section-header">
-      <div class="section-label">What I Do</div>
-      <h2 class="section-title">Full-Stack Expertise</h2>
-      <p class="section-description">
-        From backend architecture to polished frontends, I build complete solutions that scale.
-      </p>
-    </div>
-    <div class="expertise-grid">
-      <div class="expertise-card">
-        <div class="expertise-icon">⚡</div>
-        <h3>Backend Development</h3>
-        <p>Laravel-based APIs, authentication systems, payment integrations, and database optimization for high-traffic applications.</p>
-      </div>
-      <div class="expertise-card">
-        <div class="expertise-icon">🎨</div>
-        <h3>Modern Frontends</h3>
-        <p>Vue.js and Nuxt.js applications with SEO optimization, responsive design, and smooth user experiences.</p>
-      </div>
-      <div class="expertise-card">
-        <div class="expertise-icon">🤖</div>
-        <h3>AI Integration</h3>
-        <p>OpenAI API implementation for intelligent features like automated itinerary generation and smart booking systems.</p>
-      </div>
-      <div class="expertise-card">
-        <div class="expertise-icon">👥</div>
-        <h3>Technical Leadership</h3>
-        <p>Leading development teams, conducting code reviews, and translating business requirements into technical solutions.</p>
-      </div>
-      <div class="expertise-card">
-        <div class="expertise-icon">🔒</div>
-        <h3>Security & Payments</h3>
-        <p>Secure authentication, role-based access control, and seamless payment gateway integrations for e-commerce platforms.</p>
-      </div>
-      <div class="expertise-card">
-        <div class="expertise-icon">📊</div>
-        <h3>Database Design</h3>
-        <p>MySQL and MongoDB optimization, efficient schema design, and query performance tuning for scalable systems.</p>
-      </div>
-    </div>
-  </section>
+  <main class="container">
+    <h1>Sourav Chauhan</h1>
+    <div class="role">Senior Full Stack Developer</div>
 
-  <!-- Projects Section -->
-  <section class="projects" id="projects">
-    <div class="section-header">
-      <div class="section-label">Featured Work</div>
-      <h2 class="section-title">Recent Projects</h2>
-      <p class="section-description">
-        A selection of production applications I've built for real businesses.
-      </p>
-    </div>
-    <div class="projects-grid">
-      <div class="project-card">
-        <div class="project-content">
-          <div class="project-tag">AI-Powered Platform</div>
-          <h3>AdventureBook</h3>
-          <p>
-            Nationwide adventure booking platform with intelligent itinerary generation powered by OpenAI. 
-            Features role-based access for admins, companies, and users, with secure payment processing 
-            and company onboarding workflows.
-          </p>
-          <ul class="project-features">
-            <li>Laravel Backend</li>
-            <li>Vue.js Frontend</li>
-            <li>OpenAI Integration</li>
-            <li>Payment Gateways</li>
-            <li>RBAC System</li>
-          </ul>
-        </div>
-      </div>
+    <p>
+      I am a Senior Full Stack Developer with over <strong>8 years of hands-on experience</strong>
+      building scalable, production-ready web applications. My core expertise lies in
+      Laravel-based backends and modern frontend architectures using Vue.js and Nuxt.js.
+    </p>
 
-      <div class="project-card">
-        <div class="project-content">
-          <div class="project-tag">Hotel Management</div>
-          <h3>Neelkanth Retreat</h3>
-          <p>
-            High-performance hotel booking and management system with server-side rendered Nuxt.js frontend 
-            for optimal SEO. Features dynamic media handling, booking flow optimization, and comprehensive 
-            admin analytics dashboard.
-          </p>
-          <ul class="project-features">
-            <li>Nuxt.js (SSR)</li>
-            <li>Laravel API</li>
-            <li>MySQL Optimization</li>
-            <li>Admin Panel</li>
-            <li>SEO Ready</li>
-          </ul>
-        </div>
-      </div>
+    <p>
+      I’ve delivered real-world systems including hotel management platforms,
+      booking engines, admin dashboards, secure payment integrations, and AI-powered features.
+      I value clean architecture, long-term maintainability, and clear communication.
+    </p>
 
-      <div class="project-card">
-        <div class="project-content">
-          <div class="project-tag">Enterprise E-commerce</div>
-          <h3>Scalable E-commerce Solutions</h3>
-          <p>
-            Multiple enterprise-level e-commerce platforms handling high-volume transactions. 
-            Built with scalable architecture, multi-vendor support, advanced inventory management, 
-            and real-time analytics for business intelligence.
-          </p>
-          <ul class="project-features">
-            <li>Multi-vendor Architecture</li>
-            <li>Payment Processing</li>
-            <li>Inventory Management</li>
-            <li>Analytics Dashboard</li>
-            <li>REST APIs</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </section>
+    <h2>Core Expertise</h2>
+    <ul>
+      <li>Laravel, PHP, REST APIs, authentication & payments</li>
+      <li>Vue.js, Nuxt.js, modern frontend architecture</li>
+      <li>MySQL & MongoDB schema design and optimization</li>
+      <li>Role-based systems, admin panels, and secure workflows</li>
+      <li>AI integrations using OpenAI / OpenRouter APIs</li>
+    </ul>
 
-  <!-- Experience Section -->
-  <section class="experience" id="experience">
-    <div class="section-header">
-      <div class="section-label">Career Journey</div>
-      <h2 class="section-title">Experience</h2>
-      <p class="section-description">
-        8+ years progressing from junior developer to technical leadership.
-      </p>
-    </div>
-    <div class="timeline">
-      <div class="timeline-item">
-        <span class="timeline-date">April 2025 – Present</span>
-        <h3>Independent Full Stack Developer</h3>
-        <span class="timeline-company">Freelance Projects</span>
+    <h2>Selected Projects</h2>
+    <div class="projects">
+      <div class="project">
+        <h3>AdventureBook</h3>
+        <div class="meta">Laravel • Vue.js • Nuxt.js • AI Integration</div>
         <p>
-          Building AI-powered web platforms and custom solutions for clients. 
-          Recent focus on OpenAI integrations and modern Vue.js/Nuxt.js applications.
+          A nationwide adventure booking platform featuring role-based access,
+          itinerary management, secure payments, and AI-powered recommendations.
         </p>
       </div>
 
-      <div class="timeline-item">
-        <span class="timeline-date">February 2023 – March 2025</span>
-        <h3>Technical Team Lead</h3>
-        <span class="timeline-company">YoungTechies Systems Pvt Ltd</span>
+      <div class="project">
+        <h3>Neelkanth Retreat</h3>
+        <div class="meta">Laravel • Nuxt.js (SSR) • Hotel Management</div>
         <p>
-          Led technical development for Laravel and OpenCart platforms while conducting code reviews, 
-          mentoring developers, and owning end-to-end delivery timelines.
-        </p>
-      </div>
-
-      <div class="timeline-item">
-        <span class="timeline-date">February 2019 – February 2023</span>
-        <h3>Senior Software Developer</h3>
-        <span class="timeline-company">YoungTechies Systems Pvt Ltd</span>
-        <p>
-          Designed enterprise-grade applications, optimized database performance, 
-          and integrated payment gateways for high-traffic e-commerce platforms.
-        </p>
-      </div>
-
-      <div class="timeline-item">
-        <span class="timeline-date">February 2017 – February 2019</span>
-        <h3>Software Developer</h3>
-        <span class="timeline-company">YoungTechies Systems Pvt Ltd</span>
-        <p>
-          Developed full-stack applications and e-commerce solutions using PHP frameworks, 
-          WordPress, and OpenCart with custom module development.
+          Hotel booking and management system with SEO-ready frontend,
+          admin dashboard, booking flow optimization, and dynamic media handling.
         </p>
       </div>
     </div>
-  </section>
 
-  <!-- Contact Section -->
-  <section class="contact" id="contact">
-    <div class="section-header">
-      <div class="section-label">Let's Connect</div>
-      <h2 class="section-title">Ready to Start Your Project?</h2>
-      <p class="section-description">
-        Whether you need a full-stack developer or technical leadership, I'm here to help bring your vision to life.
+    <h2>Contact</h2>
+    <div class="contact">
+      <p>
+        Email:
+        <a href="mailto:dev.chauhan.sourav@gmail.com">dev.chauhan.sourav@gmail.com</a><br />
+        GitHub:
+        <a href="https://github.com/devChauhanSourav" target="_blank">github.com/devChauhanSourav</a><br />
+        LinkedIn:
+        <a href="https://www.linkedin.com/in/sourav-chauhan-401157a0" target="_blank">
+          linkedin.com/in/sourav-chauhan
+        </a>
+      </p>
+
+      <p style="color:#94a3b8;">
+        Available for freelance or consulting engagements.
       </p>
     </div>
-    <div class="contact-content">
-      <div class="contact-methods">
-        <div class="contact-card">
-          <div class="contact-card-icon">📧</div>
-          <h3>Email</h3>
-          <a href="mailto:souravrajput0618@gmail.com">souravrajput0618@gmail.com</a>
-        </div>
-        <div class="contact-card">
-          <div class="contact-card-icon">📱</div>
-          <h3>Phone</h3>
-          <a href="tel:+919816575750">+91-9816575750</a>
-        </div>
-        <div class="contact-card">
-          <div class="contact-card-icon">💼</div>
-          <h3>LinkedIn</h3>
-          <a href="https://www.linkedin.com/in/sourav-chauhan-401157a0" target="_blank" rel="noopener">View Profile</a>
-        </div>
-        <div class="contact-card">
-          <div class="contact-card-icon">💻</div>
-          <h3>GitHub</h3>
-          <a href="https://github.com/devChauhanSourav" target="_blank" rel="noopener">View Code</a>
-        </div>
-      </div>
-    </div>
-  </section>
 
-  <!-- Footer -->
-  <footer class="footer">
-    <p>&copy; 2025 Sourav Chauhan. Built with passion for clean code and great user experiences.</p>
-  </footer>
+    <footer class="footer">
+      © 2025 Sourav Chauhan. Senior Full Stack Developer.
+    </footer>
+  </main>
 
 </body>
 </html>
